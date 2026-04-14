@@ -20,11 +20,12 @@ Le menu burger aura les actions suivantes:
 ## En Création
 
 en création, les personnes connectés sur le board peuvent faire les actions suivantes:
-- créer des rectangles, des ronds/ ovales
-  - transparence
-  - couleur
-  - taille
-  - bordure
+- créer des rectangles, des ronds/ ovales, ou des formes irrégulières de plusieurs côté. ces zones peuvent etre déplacer et modifier au niveau de :
+  - la transparence
+  - la couleur de fond
+  - la taille
+  - la couleur des bordure (ou pas de bordure)
+  - et une couleur pour les post-it qui seront placés dessus
 - intégrer des images et les redimentionner, les déplacer
 - ajouter du texte, le redimensionner, le déplacer
 - faire des traits
@@ -51,6 +52,7 @@ Pour éviter les conflits, le premier utilisateur qui interagit avec un post-it 
 Il est possible d'ajouter un smiley au dessous des post-its par tous les utilisateurs du board.
 Le texte est par défaut lisible uniquement par le créateur du post-it.
 Un bouton permet au créateur du post-it de rendre lisible le texte.
+la couleur de fond des post-it peux etre modifié par le créateur du post-it parmis un panel de couleur
 
 
 
