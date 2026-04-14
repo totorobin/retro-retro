@@ -1,23 +1,25 @@
-# Language de programmation
+# Langage de programmation
 
 ## Contexte
 
-Suite au choix d'utiliser pnpm pour sa gestion de monorepo, le choix du language de programmation se limite à javascript ou typescript
+Suite au choix d'un monorepo basé sur pnpm (voir [ADR-0001](0001-archi-projet.md)), le langage de programmation doit appartenir à l'écosystème JavaScript.
 
 ## Décision
 
-Pour une meilleur lisibilité, le choix se porte sur le typescript
+Le choix se porte sur **TypeScript** pour l'ensemble du projet.
 
 ## Statut
 
 - [ ] Proposé (2026-04-14)
 - [x] Accepté (2026-04-14)
-- [ ] Rejeté { date de rejet }
-- [ ] Déprécié { date de dépreciation } / { raison dépréciation }
-- [ ] Remplacé { date de remplacement } / { raison remplacement }
+- [ ] Rejeté
+- [ ] Déprécié
+- [ ] Remplacé
 
 ## Conséquences
 
-utilisation du typage systématique dans tous les projets
+- Utilisation du typage systématique dans tous les packages du monorepo.
+- Détection d'erreurs plus précoce lors du développement.
+- Meilleure maintenabilité et auto-documentation du code.
 
 

@@ -1,14 +1,14 @@
-# Achitecture globale du projet
+# Architecture globale du projet
 
 ## Contexte
 
-Cette aplication vas necessité une interface web, une ou plusieures api, une ou plusieures librairies.
-Il faut donc choisir comment gérer l'ensemble des projets
+Cette application va nécessiter une interface web, une ou plusieurs API et des bibliothèques partagées.
+Il faut choisir comment structurer et gérer l'ensemble de ces composants.
 
 ## Décision
 
-L'ensemble du projet vas etre dévellopé dans un seul repo gitlab.
-nous allons donc creer un monorepo avec pnpm
+L'ensemble du projet sera développé dans un seul dépôt (monorepo).
+Nous utiliserons **pnpm** pour la gestion du monorepo et des dépendances.
 
 ## Statut
 
@@ -20,6 +20,8 @@ nous allons donc creer un monorepo avec pnpm
 
 ## Conséquences
 
-l'ensemble des parties de l'application sera a dévellopé avec javascript ou typescript
+- Facilite le partage de code entre le front et le back.
+- Simplifie la gestion des versions et les mises à jour de dépendances.
+- L'ensemble des parties de l'application sera développé avec l'écosystème JavaScript/TypeScript.
 
 

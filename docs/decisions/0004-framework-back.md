@@ -1,13 +1,13 @@
-# Framework des serveurs
+# Framework des serveurs (Backend)
 
 ## Contexte
 
-Le serveur back vas principalement géré les interations avec les board. comme plusieurs personnes seront connecté sur un seul board et que chaque changement éffectué par une personne doit etre affiché de facon immédiate au autres utilisateur et etre également sauvegardés pour plus tard, l'utilisation d'une websocket semble essentiel.
+L'application doit gérer des interactions temps réel sur les boards (rétrospectives). Plusieurs utilisateurs doivent voir les modifications instantanément.
 
 ## Décision
 
-On partira donc sur l'utilisation de Socket.io pour la gestion de la websocket.
-L'utilisation de Express.js est une possibilité pour les actions ne necessitant pas de websocket et l'hébergement du front
+Nous utiliserons **Socket.io** pour la gestion de la communication bidirectionnelle en temps réel.
+**Express.js** sera utilisé pour le serveur HTTP (API REST classique et service des fichiers statiques).
 
 ## Statut
 
@@ -19,5 +19,6 @@ L'utilisation de Express.js est une possibilité pour les actions ne necessitant
 
 ## Conséquences
 
-utilisation de la dernière version de Socket.io
+- Nécessite de mettre en place une logique de synchronisation d'état côté serveur.
+- Choix technologique éprouvé et facile à intégrer avec Node.js.
 

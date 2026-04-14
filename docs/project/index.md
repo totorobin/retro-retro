@@ -13,7 +13,7 @@ Ensuite, en fonction de l'url qu'il a utilisé, les choix suivants s'offre a lui
   - L'utilisateur se retrouve ensuite sur la page d'accueil de l'application
 - Cas ou l'url contient l'id d'une squad:
   - L'utilisateur rejoin automatiquement la squad en question et se retrouve sur la page d'accueil de l'application
-- Cas ou l'url contien l'id d'un board:
+- Cas ou l'url contient l'id d'un board:
   - L'utilisateur rejoin automatiquement la squad propriétaire du board et se retrouve sur le board en tant que participant
 
 # Thematisation

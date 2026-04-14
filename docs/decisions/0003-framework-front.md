@@ -1,12 +1,12 @@
-# Framework des interface Web
+# Framework des interfaces Web
 
 ## Contexte
 
-Beaucoup de bon framework son possible pour une application comme celle-ci. par facilité l'utiliser une framework connu come React ou VueJs serai recommandé
+Pour une application interactive, l'utilisation d'un framework moderne (React, Vue, Angular, Svelte) est indispensable.
 
 ## Décision
 
-De par ma maitrise de framework, le choix se porte sur VueJs
+Le choix se porte sur **Vue.js** (version 3) pour le développement des interfaces web.
 
 ## Statut
 
@@ -18,6 +18,8 @@ De par ma maitrise de framework, le choix se porte sur VueJs
 
 ## Conséquences
 
-utilisation de la dernière version de VueJs pour la/les application Web
+- Utilisation de la Composition API.
+- Utilisation des composants mono-fichier (.vue).
+- Choix cohérent avec l'expertise technique déjà présente.
 
 
