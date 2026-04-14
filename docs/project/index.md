@@ -16,7 +16,12 @@ Ensuite, en fonction de l'url qu'il a utilisé, les choix suivants s'offre a lui
 - Cas ou l'url contient l'id d'un board:
   - L'utilisateur rejoin automatiquement la squad propriétaire du board et se retrouve sur le board en tant que participant
 
-# Thematisation
+## Rôles au sein d'une Squad
+
+- **Administrateur** : Créateur de la squad. Il possède les pleins pouvoirs (inviter, supprimer ou bannir des membres).
+- **Membre** : Peut voir les boards de la squad, en créer de nouveaux et participer aux sessions. Un membre peut quitter la squad de sa propre initiative.
+
+# Thèmatisation
 
 L'application aura pour couleur principale le bleu roi
 Le fond sera un blanc cassé

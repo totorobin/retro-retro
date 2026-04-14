@@ -1,7 +1,7 @@
 # Le Board
 
-Le board peux  avoir 2 états : en création et en présentation
-Seul le propriétaire (le créateur) du board peux changer l'état.
+Le board peut avoir deux états : **Création** et **Présentation**.
+Seul le propriétaire (le créateur) du board peut changer l'état. Le passage d'un mode à l'autre est réversible.
 
 la page du board se présente ainsi:
 - c'est une page au dimensions 'infinie' : la fenêtre du navigateur affiche par défaut la partie centrale de la page, on peux zoomer et dézoomer (via la molette de la souris), on également peux se déplacer dans la page (via click long sur le bouton de la souris + déplacement de la souris)
@@ -29,15 +29,16 @@ en création, les personnes connectés sur le board peuvent faire les actions su
 - ajouter du texte, le redimensionner, le déplacer
 - faire des traits
 
-## EN PRESENTATION
+## EN PRÉSENTATION
 
-en présentation, les personnes connectés sur le board peuvent faire les actions suivantes:
-- voir le board
-- faire des traits qui s'effacent au bout de 10 secondes
-- creer des post-its
-- ajouter des gif ou des images
-- ajouter des pastilles correspondants aux photos de profils des utilisateurs connectés
-- intéragir avec les post-its des autres utilisateurs
+En mode présentation, les personnes connectées sur le board peuvent :
+- Voir le board dans son ensemble.
+- Visualiser les éléments créés en mode création (rectangles, ronds, images, textes), mais sans pouvoir les modifier ou les déplacer.
+- Faire des traits "laser" qui s'effacent au bout de 10 secondes.
+- Créer des post-its.
+- Ajouter des GIFs ou des images.
+- Ajouter des pastilles correspondants aux photos de profils des utilisateurs connectés.
+- Interagir avec les post-its des autres utilisateurs.
 
 
 ## Les post-its
@@ -46,6 +47,7 @@ les post-its sont des éléments qui permettent de faire des notes sur le board.
 Ils sont créés par les utilisateurs connectés au board et le texte ne peux être modifiés que par le créateur du post-it.
 Les post-its peuvent être supprimés par les créateurs des post-its ou le créateur du board.
 Les post-its peuvent être déplacés, redimensionnés par tous les utilisateurs connectés au board.
+Pour éviter les conflits, le premier utilisateur qui interagit avec un post-it en prend le contrôle exclusif jusqu'à la fin de son action (système de verrouillage).
 Il est possible d'ajouter un smiley au dessous des post-its par tous les utilisateurs du board.
 Le texte est par défaut lisible uniquement par le créateur du post-it.
 Un bouton permet au créateur du post-it de rendre lisible le texte.
