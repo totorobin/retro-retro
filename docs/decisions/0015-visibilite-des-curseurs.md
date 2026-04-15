@@ -23,8 +23,8 @@ Nous utiliserons **Socket.io** (voir [ADR-0004](0004-framework-back.md)) pour di
 
 ## Statut
 
-- [x] Proposé (2026-04-14)
-- [ ] Accepté
+- [ ] Proposé (2026-04-14)
+- [x] Accepté (2026-04-15)
 - [ ] Rejeté
 - [ ] Déprécié
 - [ ] Remplacé

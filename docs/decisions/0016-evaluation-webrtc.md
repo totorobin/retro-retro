@@ -17,9 +17,9 @@ Nous **ne retenons pas** WebRTC comme solution principale pour la synchronisatio
 
 ## Statut
 
-- [x] Proposé (2026-04-14)
+- [ ] Proposé (2026-04-14)
 - [ ] Accepté
-- [ ] Rejeté
+- [x] Rejeté (2026-04-15)
 - [ ] Déprécié
 - [ ] Remplacé
 
