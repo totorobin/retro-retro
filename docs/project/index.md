@@ -6,8 +6,8 @@ L'utilisation ce doit simple et ludique. l'objectif étant avant tout de passer 
 
 ## Utilisation
 
-Quand un utilisateur se connecte pour la première fois, il doit créer un compte avant de pouvoir acceder a l'application
-Ensuite, en fonction de l'url qu'il a utilisé, les choix suivants s'offre a lui :
+Quand un utilisateur se connecte pour la première fois, son compte est automatiquement créé via Google OAuth2 avant de pouvoir accéder à l'application.
+Ensuite, en fonction de l'url qu'il a utilisé, les choix suivants s'offrent à lui :
 - Cas part défaut, url de l'application sans paramètres particulier :
   - L'utilisateur est invité a rejoindre une Squad ou créer une Squad
   - L'utilisateur se retrouve ensuite sur la page d'accueil de l'application
