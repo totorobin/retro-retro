@@ -3,63 +3,61 @@
 Le board peut avoir deux états : **Création** et **Présentation**.
 Seul le propriétaire (le créateur) du board peut changer l'état. Le passage d'un mode à l'autre est réversible.
 
-la page du board se présente ainsi:
-- c'est une page au dimensions 'infinie' : la fenêtre du navigateur affiche par défaut la partie centrale de la page, on peux zoomer et dézoomer (via la molette de la souris), on également peux se déplacer dans la page (via click long sur le bouton de la souris + déplacement de la souris)
-- en haut a droite le fenêtre : un burger menu suivis du titre du board
-- en haut au centre, visible uniquement par le propriétaire du board, un switch permettant de passer de l'état de création a l'état de présentation
-- en haut a droite le fenêtre : la liste des utilisateurs connectés au board. Les curseurs de chaque utilisateur connecté sont visibles sur le board, avec leur nom ou leur photo de profil.
-- en bas a droite, une version réduite de l'ensemble de la page permettant de se déplacer rapidement dans celle ci par simple click
-- sur la gauche une barre de bouton adapté à l'état du board (en création, des boutons pour creer les formes, du texte, etc..., en présentations pour les post-it, traits laser, etc...)
-- en bas au centre, en mode présentation, un switch permet de rendre l'ensemble des post-its de l'utilisateur lisibles ou ilisibles pour les autres utilisateurs
+La page du board se présente ainsi :
+- C'est une page aux dimensions "infinies" : la fenêtre du navigateur affiche par défaut la partie centrale de la page. On peut zoomer et dézoomer (via la molette de la souris) et se déplacer dans la page (via un clic long sur le bouton de la souris + déplacement).
+- En haut à gauche de la fenêtre : un menu burger suivi du titre du board.
+- En haut au centre, visible uniquement par le propriétaire du board : un switch permettant de passer de l'état de création à l'état de présentation.
+- En haut à droite de la fenêtre : la liste des utilisateurs connectés au board. Les curseurs de chaque utilisateur connecté sont visibles sur le board, avec leur nom ou leur photo de profil.
+- En bas à droite : une version réduite de l'ensemble de la page (mini-map) permettant de se déplacer rapidement par simple clic.
+- Sur la gauche : une barre d'outils adaptée à l'état du board (en mode création : boutons pour créer des formes, du texte, etc. ; en mode présentation : post-its, traits laser, pastilles, etc.).
+- En bas au centre, en mode présentation : un switch permet de rendre l'ensemble des post-its de l'utilisateur lisibles ou invisibles pour les autres participants (permettant de tout dévoiler d'un coup).
 
-Le menu burger aura les actions suivantes:
-- quitter le board (revenir sur la page d'accueil)
-- Générer un lien de partage pour inviter des participants
-- Changer le mode d'affichage (Dark Mode/ Light Mode)
-- Creer un timer
+Le menu burger contient les actions suivantes :
+- Quitter le board (revenir à la page d'accueil).
+- Générer un lien de partage pour inviter des participants.
+- Changer le mode d'affichage (Dark Mode / Light Mode).
+- Créer un timer.
 
-## En Création
+## Mode Création
 
-en création, les personnes connectés sur le board peuvent faire les actions suivantes:
-- créer des rectangles, des ronds/ ovales, ou des formes irrégulières de plusieurs côté. ces zones peuvent etre déplacer et modifier au niveau de :
-  - la transparence
-  - la couleur de fond
-  - la taille
-  - la couleur des bordure (ou pas de bordure)
-  - et une couleur pour les post-it qui seront placés dessus
-- intégrer des images et les redimentionner, les déplacer
-- ajouter du texte, le redimensionner, le déplacer
-- faire des traits
+En mode création, les personnes connectées sur le board peuvent effectuer les actions suivantes :
+- Créer des rectangles, des ronds/ovales, ou des formes irrégulières polygonales. Ces zones peuvent être déplacées et modifiées sans système de verrouillage (stratégie "Last-Write-Wins" pour tous les éléments) au niveau de :
+  - La transparence.
+  - La couleur de fond.
+  - La taille.
+  - La couleur des bordures (ou absence de bordure).
+  - La couleur par défaut des post-its qui y seront placés.
+- Intégrer des images, les redimensionner et les déplacer.
+- Ajouter du texte, le redimensionner et le déplacer.
+- Tracer des traits.
 
-## EN PRÉSENTATION
+## Mode Présentation
 
 En mode présentation, les personnes connectées sur le board peuvent :
-- Voir le board dans son ensemble.
-- Visualiser les éléments créés en mode création (rectangles, ronds, images, textes), mais sans pouvoir les modifier ou les déplacer.
-- Faire des traits "laser" qui s'effacent au bout de 10 secondes.
+- Consulter le board dans son ensemble.
+- Visualiser les éléments créés en mode création (rectangles, ronds, images, textes), sans pouvoir les modifier ni les déplacer.
+- Tracer des traits "laser" qui s'effacent automatiquement au bout de 10 secondes.
 - Créer des post-its.
 - Ajouter des GIFs ou des images.
-- Ajouter des pastilles correspondants aux photos de profils des utilisateurs connectés.
+- Ajouter des pastilles correspondant aux photos de profil des utilisateurs connectés (faisant office de "tampon" ou réaction), ainsi que des pastilles contenant des symboles et des smileys.
 - Interagir avec les post-its des autres utilisateurs.
-
 
 ### Les post-its
 
-les post-its sont des éléments qui permettent de faire des notes sur le board. 
-- Ils sont créés par les utilisateurs connectés au board et le texte ne peux être modifiés que par le créateur du post-it.
-- Les post-its peuvent être supprimés par les créateurs des post-its ou le créateur du board.
-- Les post-its peuvent être déplacés, redimensionnés par tous les utilisateurs connectés au board.
+Les post-its sont des éléments permettant de prendre des notes sur le board.
+- Ils sont créés par les utilisateurs connectés. Le texte ne peut être modifié que par son créateur.
+- Un post-it peut être supprimé par son créateur ou par le propriétaire du board.
+- Les post-its peuvent être déplacés et redimensionnés par tous les utilisateurs connectés.
 - Pour éviter les conflits, le premier utilisateur qui interagit avec un post-it en prend le contrôle exclusif jusqu'à la fin de son action (système de verrouillage).
-- Il est possible d'ajouter des smiley au dessous des post-its par tous les utilisateurs du board, lorsque 2 utilisateurs ajoute le même smiley, un incrément s'affiche.
-- Le texte est par défaut lisible uniquement par le créateur du post-it.
-- Un bouton permet au créateur du post-it de rendre lisible le texte.
-- la couleur de fond des post-it peux etre modifié par le créateur du post-it parmis un panel de couleur
-- Lorsque l'on déplace ou on crée un post-it au dessus d'une zone pour l'acquelle une couleur a été définie, le post-it prend immédiatement la couleur définie.
-
+- Il est possible d'ajouter des smileys/réactions sous les post-its. Lorsque plusieurs utilisateurs ajoutent le même smiley, un compteur d'incrément s'affiche.
+- Par défaut, le contenu textuel n'est lisible que par le créateur du post-it.
+- Un bouton permet au créateur de rendre son texte visible par tous.
+- La couleur de fond des post-its peut être modifiée par le créateur parmi une palette prédéfinie.
+- Lorsqu'on déplace ou crée un post-it au-dessus d'une zone ayant une couleur prédéfinie, le post-it adopte immédiatement cette couleur.
 
 ### Liste des utilisateurs
 
-La liste des utilisateurs connecté au bord est représenté par les images de profile des utilisateurs.
-- lorsqu'un utilisateur est déconnecté du board, l'image sera grisé pour représenté son absence
-- lorsque l'on passe la souris sur une image de profile, le nom prénom s'affiche
-- cliquer sur une image de profile permet d'activer/désactiver la mise en évidence des objets (post-it, images) de l'utilisateur (flouter et assombrir le reste du board)
+La liste des utilisateurs connectés est représentée par leurs photos de profil.
+- Lorsqu'un utilisateur se déconnecte, sa photo est grisée pour signaler son absence.
+- Au survol d'une photo de profil, le nom et le prénom de l'utilisateur s'affichent.
+- Cliquer sur une photo de profil permet d'activer ou de désactiver la mise en évidence des objets (post-its, images) appartenant à cet utilisateur (en floutant et assombrissant le reste du board).

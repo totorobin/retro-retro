@@ -7,7 +7,7 @@ Il est nécessaire de définir comment le système réagit en cas de modificatio
 
 ## Décision
 
-La stratégie retenue est **Last-Write-Wins (LWW)** combinée à un système de **verrouillage temporaire**.
+La stratégie retenue est **Last-Write-Wins (LWW)** combinée à un système de **verrouillage temporaire** (uniquement en mode Présentation pour les post-its). En mode Création, aucune restriction de verrouillage n'est appliquée (LWW pur).
 
 ## Statut
 
