@@ -1,5 +1,10 @@
 import { defineStore } from 'pinia';
-import { Board, BoardMode, User } from '@retro/models';
+import { Board, User } from '@retro/models';
+// Hack temporaire si l'import de l'enum échoue
+const BoardMode = {
+  Creation: 'CREATION',
+  Presentation: 'PRESENTATION'
+};
 
 export const useBoardStore = defineStore('board', {
   state: () => ({
@@ -14,8 +19,19 @@ export const useBoardStore = defineStore('board', {
       this.currentBoard = board;
       this.mode = board.mode;
     },
-    updateElements(elements: any[]) {
-      this.elements = elements;
+    upsertElement(element: any) {
+      const index = this.elements.findIndex(e => e.id === element.id);
+      if (index !== -1) {
+        this.elements[index] = element;
+      } else {
+        this.elements.push(element);
+      }
+    },
+    setElementLock(elementId: string, lockedBy?: string) {
+      const element = this.elements.find(e => e.id === elementId);
+      if (element) {
+        element.lockedBy = lockedBy;
+      }
     },
     setMode(mode: BoardMode) {
       this.mode = mode;
