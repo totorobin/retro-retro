@@ -102,9 +102,8 @@ Given("que je suis connecté à l'application", async function () {
     }]
   });
   await mockSession(this.page, 'mock_google_id', this.webUrl);
-  // Naviguer avec le paramètre mock_user_id en URL pour forcer la première session
-  await this.page.goto(`${this.webUrl}/squads?mock_user_id=mock_google_id`);
-  await this.page.waitForURL(/.*squads/, { timeout: 10000 });
+  await this.page.goto(`${this.webUrl}/squads`);
+  await expect(this.page).toHaveURL(/.*squads/);
 });
 
 Given("je suis connecté à l'application", async function () {
@@ -118,8 +117,8 @@ Given("je suis connecté à l'application", async function () {
     }]
   });
   await mockSession(this.page, 'mock_google_id', this.webUrl);
-  await this.page.goto(`${this.webUrl}/squads?mock_user_id=mock_google_id`);
-  await this.page.waitForURL(/.*squads/, { timeout: 10000 });
+  await this.page.goto(`${this.webUrl}/squads`);
+  await expect(this.page).toHaveURL(/.*squads/);
 });
 
 When("j'ouvre le menu burger de l'entête", async function () {

@@ -8,10 +8,18 @@
   "devDependencies": {
     "@cucumber/cucumber": "^12.8.1",
     "@playwright/test": "^1.59.1",
+    "@types/cookie-signature": "^1.1.2",
+    "@types/is-running": "^2.1.2",
     "@types/node": "^18.0.0",
     "axios": "^1.6.0",
+    "is-running": "^2.1.0",
     "playwright": "^1.59.1",
     "ts-node": "^10.0.0",
-    "typescript": "^5.9.3"
+    "typescript": "^5.9.3",
+    "wait-on": "^9.0.5"
+  },
+  "dependencies": {
+    "cookie-signature": "^1.2.2",
+    "mongodb": "^7.1.1"
   }
 }

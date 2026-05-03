@@ -52,19 +52,21 @@ export interface ShapeElement extends BaseElement {
   defaultPostitColor?: string;
 }
 
+export interface Reaction {
+  emoji: string;
+  count: number;
+  userIds: string[];
+}
+
 export interface PostItElement extends BaseElement {
   type: 'POSTIT';
   content: string;
   width: number;
   height: number;
   color: string;
-  isVisible: boolean; // Pour le switch de dévoilement
-  lockedBy?: string; // Verrouillage temporaire (ADR-0012)
-  reactions: Array<{
-    emoji: string;
-    count: number;
-    userIds: string[];
-  }>;
+  isVisible: boolean;
+  lockedBy?: string;
+  reactions: Reaction[];
 }
 
 export interface ImageElement extends BaseElement {
@@ -79,4 +81,23 @@ export interface TextElement extends BaseElement {
   content: string;
   fontSize: number;
   color: string;
+  width?: number;
 }
+
+export interface StampElement extends BaseElement {
+  type: 'STAMP';
+  stampType: 'profile' | 'emoji';
+  userId?: string;
+  userPicture?: string;
+  emoji?: string;
+  size: number;
+}
+
+export interface LaserTrailElement {
+  id: string;
+  userId: string;
+  points: number[];
+  color: string;
+}
+
+export type AnyElement = ShapeElement | PostItElement | ImageElement | TextElement | StampElement;

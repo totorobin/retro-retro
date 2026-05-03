@@ -1,21 +1,16 @@
 import { Router } from 'express';
 import passport from 'passport';
-import { UserModel } from '../models';
 import { SquadController, BoardController, TestController } from '../controllers';
 import { isAuthenticated } from '../middlewares/auth.middleware';
 
 const router = Router();
 
 // AUTH ROUTES
-router.get('/auth/google',
-  passport.authenticate('google', { scope: ['profile', 'email'] })
-);
+router.get('/auth/google', passport.authenticate('google', { scope: ['profile', 'email'] }));
 
-router.get('/auth/google/callback', 
+router.get('/auth/google/callback',
   passport.authenticate('google', { failureRedirect: '/login' }),
-  (req, res) => {
-    res.redirect(process.env.FRONTEND_URL || 'http://localhost:3000/squads');
-  }
+  (req, res) => { res.redirect(process.env.FRONTEND_URL || 'http://localhost:3000/squads'); }
 );
 
 router.post('/auth/logout', (req: any, res: any, next: any) => {
@@ -25,28 +20,28 @@ router.post('/auth/logout', (req: any, res: any, next: any) => {
   });
 });
 
-router.get('/api/me', (req: any, res: any) => {
-  res.json(req.user || null);
-});
-
-router.get('/api/health', (req, res) => {
-  res.json({ status: 'ok' });
-});
+router.get('/api/me', (req: any, res: any) => res.json(req.user || null));
+router.get('/api/health', (req, res) => res.json({ status: 'ok' }));
 
 // SQUAD ROUTES
 router.post('/api/squads', isAuthenticated, SquadController.create);
 router.get('/api/squads', isAuthenticated, SquadController.list);
 router.get('/api/squads/:id', isAuthenticated, SquadController.getById);
 router.post('/api/squads/:id/join', isAuthenticated, SquadController.join);
+router.post('/api/squads/:id/leave', isAuthenticated, SquadController.leave);
+router.get('/api/squads/:id/members', isAuthenticated, SquadController.getMembers);
+router.get('/api/squads/:id/boards', isAuthenticated, BoardController.listBySquad);
 
 // BOARD ROUTES
+router.post('/api/boards', isAuthenticated, BoardController.create);
 router.get('/api/boards/:id', isAuthenticated, BoardController.getById);
 
-// TEST ROUTES
+// TEST ROUTES (non-production only)
 if (process.env.NODE_ENV !== 'production') {
   router.post('/api/test/clear-db', TestController.clearDb);
   router.post('/api/test/seed-squads', TestController.seedSquads);
   router.post('/api/test/seed-users', TestController.seedUsers);
+  router.post('/api/test/seed-boards', TestController.seedBoards);
 }
 
 export default router;

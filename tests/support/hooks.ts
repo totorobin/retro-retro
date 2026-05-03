@@ -8,8 +8,6 @@ let webProcess: ChildProcess;
 async function killProcess(proc: ChildProcess) {
   if (!proc || !proc.pid) return;
   
-  console.log(`Tentative d'arrêt du processus ${proc.pid}...`);
-  
   if (process.platform === 'win32') {
     try {
       execSync(`taskkill /pid ${proc.pid} /T /F`, { stdio: 'ignore' });
@@ -19,14 +17,12 @@ async function killProcess(proc: ChildProcess) {
   }
 }
 
-BeforeAll(async function() {
+BeforeAll({ timeout: 120000 }, async function() {
   console.log('Nettoyage des ports 4000 et 3000...');
   if (process.platform === 'win32') {
     try {
-      // Tuer les processus qui écoutent sur les ports 4000 et 3000
       execSync('Powershell -Command "Get-NetTCPConnection -LocalPort 4000,3000 -ErrorAction SilentlyContinue | ForEach-Object { Stop-Process -Id $_.OwningProcess -Force }"', { stdio: 'ignore' });
-      // Attendre un peu que Windows libère réellement les ports
-      await new Promise(resolve => setTimeout(resolve, 2000));
+      await new Promise(resolve => setTimeout(resolve, 1000));
     } catch (e) {}
   }
 
@@ -37,15 +33,19 @@ BeforeAll(async function() {
     console.error('Erreur lors du démarrage de Docker:', error);
   }
 
-  console.log('Démarrage de l\'API...');
-  apiProcess = spawn('pnpm', ['-F', '@retro/api', 'dev'], {
+  console.log('Build des packages...');
+  execSync('pnpm -F @retro/api build', { stdio: 'inherit' });
+  execSync('pnpm -F @retro/web build', { stdio: 'inherit' });
+
+  console.log('Démarrage de l\'API (Production mode)...');
+  apiProcess = spawn('pnpm', ['-F', '@retro/api', 'start'], {
     shell: true,
     stdio: 'ignore',
     detached: false
   });
 
-  console.log('Démarrage du Web...');
-  webProcess = spawn('pnpm', ['-F', '@retro/web', 'dev'], {
+  console.log('Démarrage du Web (Preview mode)...');
+  webProcess = spawn('pnpm', ['-F', '@retro/web', 'preview', '--', '--port', '3000', '--strictPort'], {
     shell: true,
     stdio: 'ignore',
     detached: false
@@ -69,12 +69,12 @@ BeforeAll(async function() {
 
 AfterAll(async function() {
   console.log('Arrêt des applications...');
-  await killProcess(apiProcess);
   await killProcess(webProcess);
+  await killProcess(apiProcess);
 
   console.log('Arrêt de MongoDB...');
   try {
-    execSync('docker-compose stop mongodb', { stdio: 'inherit' });
+    execSync('docker-compose stop mongodb', { stdio: 'ignore' });
   } catch (error) {
     console.error('Erreur lors de l\'arrêt de Docker:', error);
   }

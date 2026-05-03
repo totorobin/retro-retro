@@ -9,13 +9,15 @@
   },
   "dependencies": {
     "@retro/models": "workspace:*",
-    "vue": "^3.4.0",
-    "pinia": "^2.1.0",
-    "vue-router": "^4.2.0",
+    "@types/uuid": "^11.0.0",
+    "axios": "^1.6.0",
     "konva": "^9.2.0",
-    "vue-konva": "^3.0.0",
+    "pinia": "^2.1.0",
     "socket.io-client": "^4.7.0",
-    "axios": "^1.6.0"
+    "uuid": "^13.0.0",
+    "vue": "^3.4.0",
+    "vue-konva": "^3.0.0",
+    "vue-router": "^4.2.0"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^5.0.0",
